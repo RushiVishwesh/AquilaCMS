@@ -1,7 +1,6 @@
 ---
 - name: test1
   hosts: all
-  become: true
   tasks: 
     - name: Deploying applicatiopn
       ansible.builtin.shell:
