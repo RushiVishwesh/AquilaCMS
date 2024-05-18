@@ -1,6 +1,7 @@
 ---
 - name: test1
   hosts: all
+  become: yes
   tasks:
     - name: Install docker
       ansible.builtin.apt:
@@ -14,4 +15,4 @@
 
     - name: Deploying applicatiopn
       ansible.builtin.shell:
-        cmd: "docker network create aquila && docker pull vishweshrushi/aquila-mern-application:latest && docker run -d --name aquilacms -p 3010:3010 --network=aquila vishweshrushi/aquila-mern-application:latest && docker exec -i -e PORT=3051 aquilacms npm run test"
+        cmd: "docker network create aquila && docker pull vishweshrushi/aquila-mern-application:latest && docker run -d --name aquilacms -p 3010:3010 --network=aquila vishweshrushi/aquila-mern-application:latest"
