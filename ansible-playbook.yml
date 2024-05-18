@@ -1,7 +1,7 @@
 ---
 - name: test1
   hosts: all
-  become: yes
+  become: true
   tasks:
     - name: Install docker
       ansible.builtin.apt:
